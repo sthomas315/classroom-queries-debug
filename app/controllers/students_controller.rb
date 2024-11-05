@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new
-    @student.first_name = params.fetch("query_first_name")
+    @student.first_name = params.fetch("query_name")
     @student.last_name = params.fetch("query_last_name")
     @student.email = params.fetch("query_email")
 
@@ -30,7 +30,7 @@ class StudentsController < ApplicationController
     the_id = params.fetch("path_id")
     @student = Student.where({ :id => the_id }).at(0)
 
-    @student.first_name = params.fetch("query_first_name")
+    @student.first_name = params.fetch("query_name")
     @student.last_name = params.fetch("query_last_name")
     @student.email = params.fetch("query_email")
 
